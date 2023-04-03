@@ -2,7 +2,7 @@
 import React from 'react';
 import ProductCategoryRow from './ProductCategoryRow';
 import ProductRow from './ProductRow';
-import {ThemeContext} from './theme-context';
+//import {ThemeContext} from './theme-context';
 
 export default function ProductTable({products}) {
   const rows = [];
@@ -22,7 +22,7 @@ export default function ProductTable({products}) {
 
     rows.push(
       <ProductRow
-        isStock = {!!products.isStocked}
+        isStock = {products.isStocked}
         product={product}
         key={product.name} />
     );

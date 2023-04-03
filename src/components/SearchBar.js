@@ -15,13 +15,13 @@ export default function SearchBar(props) {
   //   const setFilterRecordsEvent = () => {
   //     setFilterRecords(!filterRecords);
   //   }
-  //console.log(level1);
-  //console.log(props);
+  console.log(level1);
+  console.log(props);
   return (
     <section className="section1">
       <input type="text" placeholder="Search..." />
       <label>
-        <input type="checkbox" selected={level1.isStocked} onClick={() => props.filterList()}/>
+        <input type="checkbox" defaultChecked={level1.isStocked} onClick={() => props.filterList()}/>
         {' '}
         Only show products in stock
       </label>

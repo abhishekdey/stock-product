@@ -4,7 +4,7 @@ import FilterableProductTable from './components/FilterableProductTable';
 
 
 // second solution
-import React, { StrictMode } from "react";
+import React from "react";
 import "./styles.css";
 //import App from './components/App';
 import ReactDOM from 'react-dom';

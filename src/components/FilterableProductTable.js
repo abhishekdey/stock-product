@@ -4,12 +4,13 @@ import ProductTable from './ProductTable';
 import {ThemeContext} from './theme-context';
 //export const ThemeContext = React.createContext(false);
 
-export default function FilterableProductTable(products) {
+export default function FilterableProductTable() {
     //const {isStocked, setFilterRecords} = useState(ThemeContext);
     const [isStocked, setFilterRecords] = React.useState(ThemeContext);
     const level1 = useContext(ThemeContext);
     const setFilterRecordsEvent = () => {
       setFilterRecords(!isStocked);
+      //level1.setFilterRecordsEvent()
       level1.isStocked = isStocked;
       //console.log(level1);
     }
