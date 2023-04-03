@@ -1,18 +1,11 @@
 import React from 'react';
 
-function ProductCategoryRow({params}) {
-  // const filterRecords = (data) => {
-  //   return data;
-  // }
-
+export default function ProductCategoryRow({ category }) {
   return (
     <tr>
-      <th colSpan="5">
-          {params}
+      <th colSpan="90">
+        {category}
       </th>
     </tr>
-  )
+  );
 }
-
-
-export default ProductCategoryRow;

@@ -2,14 +2,16 @@
 import React from 'react';
 import ProductCategoryRow from './ProductCategoryRow';
 import ProductRow from './ProductRow';
-import ThemeContext from './FilterableProductTable';
+import {ThemeContext} from './theme-context';
 
-function ProductTable({ products}) {
+export default function ProductTable({products}) {
   const rows = [];
   let lastCategory = null;
-  let isStocked = false || ThemeContext;
-
-  products.forEach((product) => {
+  //let isStocked = false || ThemeContext;
+  //const a1 = [products.products];
+  //console.log(products);
+  
+  products.data.forEach(product => {
     if (product.category !== lastCategory) {
       rows.push(
         <ProductCategoryRow
@@ -20,7 +22,7 @@ function ProductTable({ products}) {
 
     rows.push(
       <ProductRow
-        isStock = {isStocked}
+        isStock = {!!products.isStocked}
         product={product}
         key={product.name} />
     );
@@ -39,5 +41,3 @@ function ProductTable({ products}) {
     </table>
   );
 }
-
-export default ProductTable;

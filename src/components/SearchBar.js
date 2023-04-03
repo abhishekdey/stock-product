@@ -1,19 +1,47 @@
-import React from 'react';
-import { useState } from 'react';
-import ThemeContext from './FilterableProductTable';
+import React,{useState,useContext} from 'react';
+import {ThemeContext} from './theme-context';
+//import { useContext} from "react";
+//import { LevelContext } from "./level-context";
 
-function SearchBar(props) {
-  const {filterRecords, setFilterRecords} = useState(ThemeContext);
+export default function SearchBar(props) {
+  const level1 = useContext(ThemeContext);
+  //const ThemeContext1 = React.useContext(ThemeContext);
+  //const level1 = useContext(LevelContext);
+  //console.log(ThemeContext1);
+
+
+  // const {filterRecords, setFilterRecords} = useState(ThemeContext);
+  //   const level1 = useContext(ThemeContext);
+  //   const setFilterRecordsEvent = () => {
+  //     setFilterRecords(!filterRecords);
+  //   }
+  //console.log(level1);
+  //console.log(props);
   return (
-    <form>
+    <section className="section1">
       <input type="text" placeholder="Search..." />
       <label>
-        <input type="checkbox"  onClick={() => setFilterRecords(!filterRecords)}/>
+        <input type="checkbox" selected={level1.isStocked} onClick={() => props.filterList()}/>
         {' '}
         Only show products in stock
       </label>
-    </form>
+    </section>
+ 
+   //<LevelContext.Provider value={level1}>{children}</LevelContext.Provider>
   );
 }
 
-export default  SearchBar;
+// function SearchBar() {
+//   return (
+//     <form>
+//       <input type="text" placeholder="Search..." />
+//       <label>
+//         <input type="checkbox" />
+//         {' '}
+//         Only show products in stock
+//       </label>
+//     </form>
+//   );
+// }
+
+//export default  SearchBar;
