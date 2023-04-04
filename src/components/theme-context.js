@@ -39,7 +39,7 @@ import { createContext } from "react";
 import {DATA} from "../constants";
 export const ThemeContext = createContext({
   isStocked: true,
-  level: undefined,
+  level: 1,
   data: DATA,
   setFilterRecordsEvent: () => {
     //this.isStocked = !this.isStocked;
