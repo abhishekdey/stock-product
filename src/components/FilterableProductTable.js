@@ -1,12 +1,11 @@
-import React,{useState,useContext, useEffect} from 'react';
+import React from 'react';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 import {ThemeContext} from './theme-context';
 import Form from './Form';
 
+
 //export const ThemeContext = React.createContext(false);
-
-
 export default function FilterableProductTable() {
     //const {isStocked, setFilterRecords} = useState(ThemeContext);
     const [isStocked, setFilterRecords] = React.useState(ThemeContext);
@@ -16,7 +15,6 @@ export default function FilterableProductTable() {
       level1.isStocked = !isStocked;
       //level1.setFilterRecordsEvent() 
     }
-
     // useEffect(() => {
     //   //console.log(isStocked);
     //   //level1.isStocked = isStocked;
