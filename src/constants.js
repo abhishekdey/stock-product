@@ -8,3 +8,9 @@ export const DATA = [
   { category: "Dry Fuits", price: "$1", stocked: true, name: "Cheery" },
   { category: "Dry Fuits", price: "$16", stocked: false, name: "Dates" }
 ]
+
+
+export const items = [ { text: 'Buy grocery', done: true },
+  { text: 'Play guitar', done: false },
+  { text: 'Romantic dinner', done: false }
+];

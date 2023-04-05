@@ -1,46 +1,3 @@
-// /* eslint-disable react/jsx-no-undef */
-// import {ThemeContext, themes} from './theme-context';
-// import {ThemedButton} from './themed-button';
-
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       theme: themes.light,
-//     };
-
-//     this.toggleTheme = () => {
-//       this.setState(state => ({
-//         theme:
-//           state.theme === themes.dark
-//             ? themes.light
-//             : themes.dark,
-//       }));
-//     };
-//   }
-
-//   render() {
-//     // The ThemedButton button inside the ThemeProvider
-//     // uses the theme from state while the one outside uses
-//     // the default dark theme
-//     return (
-//       // eslint-disable-next-line react/jsx-no-undef
-//       <div>
-//         <ThemeContext.Provider value={this.state.theme}>
-//           <Toolbar changeTheme={this.toggleTheme} />
-//         </ThemeContext.Provider>
-//         <Section>
-//           <ThemedButton />
-//         </Section>
-//       </div>
-//     );
-//   }
-// }
-
-// //ReactDOM.render(<App />, document.root);
-
-// export default App;
-
 // import Heading from './Heading.js';
 // import Section from './Section.js';
 // import React from 'react';
@@ -72,19 +29,15 @@
 // }
 
 
-// React is loaded and is available as React and ReactDOM
-// imports should NOT be used
-//import { useReducer,ReactDOM } from 'react';
-import TodoList from './TodoList';
 
+import TodoList from './TodoList';
 import React from 'react';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {favoritecolor: "red"};
   }
-  //componentWillMount333() {console.log('componentWillMount333');}
-  //deprecated
+ // deprecated
   // componentWillMount() {  
   //   fetch("https://jsonplaceholder.typicode.com/todos/3")
   //     .then(response => response.json())
@@ -93,19 +46,19 @@ export default class App extends React.Component {
   //     });
   // console.log('componentWillMount');
   // }
-
-  static getDerivedStateFromProps(props, state) {console.log(state,props); }
+  static getDerivedStateFromProps(props, state) {console.log(state,props); return null;}
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/todos/3")
       .then(response => response.json())
       .then(json => {
         this.setState({ todo: json });
       });
-    console.log('componentDidMount'); setTimeout(() => {
+      console.log('componentDidMount'); 
+      setTimeout(() => {
       this.setState({favoritecolor: "yellow"})
     }, 1000)}
   shouldComponentUpdate() {console.log('shouldComponentUpdate');return true;}
-  getSnapshotBeforeUpdate() {console.log('getSnapshotBeforeUpdate');}
+  getSnapshotBeforeUpdate() {console.log('getSnapshotBeforeUpdate'); return null;}
   componentDidUpdate() {console.log('componentDidUpdate');}
   
   render() {
@@ -118,28 +71,12 @@ export default class App extends React.Component {
   )
  }
 }
-  
-
-//document.body.innerHTML = "<div id='root'></div>";
-//const root = ReactDOM.render(document.getElementById("root"));
-
-//root.render(<App items={items}/>);
-//ReactDOM.render(<App items={items}/>, document.root);
 
 
 
+//import TodoList from './TodoList';
+//import React from 'react';
 
-
-
-
-
-
-
-
-
-
-// React is loaded and is available as React and ReactDOM
-// imports should NOT be used
 // class Input extends React.PureComponent {
 //   render() {
 //     let {forwardedRef, ...otherProps} = this.props; 
